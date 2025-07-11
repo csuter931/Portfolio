@@ -21,9 +21,11 @@
             font-family: 'Roboto Slab', serif;
         }
         .hero-bg {
-            background-image: url('https://picsum.photos/seed/workshop/1920/1080');
+            /* Updated hero banner image */
+            background-image: url('https://github.com/csuter931/Portfolio/blob/main/Images/Forstner_Set.jpg?raw=true');
             background-size: cover;
-            background-position: center;
+            /* Changed position to center the image vertically and horizontally */
+            background-position: center center;
         }
         /* Page transition styles */
         .page {
@@ -32,6 +34,7 @@
         .page.active {
             display: block;
         }
+        /* Carousel styles removed as transitions are now handled by Tailwind classes */
     </style>
 </head>
 <body class="bg-stone-100 text-stone-800">
@@ -46,7 +49,8 @@
         <header id="header" class="bg-white/80 backdrop-blur-md shadow-md sticky top-0">
             <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
                 <a href="#" class="flex items-center space-x-3 home-link">
-                    <img src="Images/Logos/SG_Logo_B&W.png" alt="Supiro Grainworks Logo" class="h-12 w-auto">
+                    <!-- Updated logo path to direct GitHub link -->
+                    <img src="https://github.com/csuter931/Portfolio/blob/main/Images/Logos/SG_Logo_B&W.png?raw=true" alt="Supiro Grainworks Logo" class="h-12 w-auto">
                     <span class="text-2xl font-title font-bold text-stone-900 hidden sm:block">Supiro Grainworks</span>
                 </a>
                 <div id="main-nav" class="hidden md:flex space-x-8">
@@ -168,17 +172,24 @@
                 </a>
 
                 <h2 class="text-4xl md:text-5xl font-heading font-bold mb-4">Sapele Outdoor Furniture Set</h2>
-                <p class="text-lg text-stone-600 mb-8">A perfect blend of modern design and all-weather resilience.</p>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-                    <div>
-                        <img src="https://github.com/csuter931/Portfolio/blob/main/Images/Deck_Furniture/Sapele-Deck-Furniture.jpg?raw=true" alt="A detailed view of the Sapele outdoor furniture" class="rounded-lg shadow-xl w-full">
-                        <!-- You can add more images here in a grid or carousel -->
+                
+                <!-- Re-introduced two-column layout for top section -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mb-16">
+                    <!-- Image Carousel -->
+                    <div class="relative overflow-hidden rounded-lg shadow-xl" data-carousel>
+                        <div class="flex transition-transform duration-500 ease-in-out" data-carousel-track>
+                            <div class="w-full flex-shrink-0" data-carousel-item><img src="https://github.com/csuter931/Portfolio/blob/main/Images/Deck_Furniture/Sapele-Deck-Furniture.jpg?raw=true" class="w-full h-full object-cover" alt="Sapele outdoor furniture set main view"></div>
+                            <div class="w-full flex-shrink-0" data-carousel-item><img src="https://github.com/csuter931/Portfolio/blob/main/Images/Deck_Furniture/View_2.jpg?raw=true" class="w-full h-full object-cover" alt="Side view of the Sapele loveseat"></div>
+                            <div class="w-full flex-shrink-0" data-carousel-item><img src="https://github.com/csuter931/Portfolio/blob/main/Images/Deck_Furniture/View_3.jpg?raw=true" class="w-full h-full object-cover" alt="Close up of the Sapele chair arm"></div>
+                            <div class="w-full flex-shrink-0" data-carousel-item><img src="https://github.com/csuter931/Portfolio/blob/main/Images/Deck_Furniture/View_4.jpg?raw=true" class="w-full h-full object-cover" alt="Detail shot of the wood grain"></div>
+                        </div>
+                        <button type="button" class="carousel-prev absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"><span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50"><svg class="w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/></svg><span class="sr-only">Previous</span></span></button>
+                        <button type="button" class="carousel-next absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"><span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50"><svg class="w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/></svg><span class="sr-only">Next</span></span></button>
                     </div>
                     <div>
                         <h3 class="text-2xl font-heading font-bold mb-3">Project Details</h3>
                         <p class="text-stone-700 leading-relaxed mb-6">
-                            This three-piece set, consisting of two enveloping chairs and a matching loveseat, was designed to be the centerpiece of an outdoor living space. The frames are constructed from solid Sapele, a durable and weather-resistant hardwood known for its beautiful interlocking grain. Each joint is a robust mortise and tenon, ensuring the furniture will last for generations.
+                            This three-piece set, consisting of two enveloping chairs and a matching loveseat, was designed to be the centerpiece of an outdoor living space. The frames are constructed from solid Sapele, a durable and weather-resistant hardwood known for its beautiful interlocking grain. Each joint is a robust floating mortise and tenon, ensuring the furniture will last for generations.
                         </p>
                         <h4 class="text-xl font-heading font-bold mb-2">Materials & Finish</h4>
                         <ul class="list-disc list-inside text-stone-700 space-y-2">
@@ -187,6 +198,60 @@
                             <li>Marine-Grade, Antimicrobial Outdoor Fabric</li>
                             <li>Mildew and Mold-Resistant Reticulated Foam</li>
                         </ul>
+                    </div>
+                </div>
+
+                <!-- Build Process Section -->
+                <div class="max-w-4xl mx-auto pt-12 border-t border-stone-300">
+                    <h3 class="text-3xl font-heading font-bold mb-8 text-center">The Build Process</h3>
+                    <!-- Design Section -->
+                    <div class="mb-12">
+                        <h4 class="text-2xl font-heading font-bold mb-4">Design</h4>
+                        <p class="text-stone-700 leading-relaxed">The design process started in Onshape, a 3D modeling software. This allowed me to dial in the proportions and overall shape of the chairs and loveseat. The goal was to create a modern, enveloping form that was both comfortable and visually striking. I decided on Sapele wood for its beautiful appearance, durability, and workability, making it an excellent choice for outdoor furniture that needs to withstand sun, rain, and snow.</p>
+                    </div>
+
+                    <!-- Milling Section -->
+                    <div class="mb-12">
+                        <h4 class="text-2xl font-heading font-bold mb-4">Milling & Preparation</h4>
+                        <p class="text-stone-700 leading-relaxed mb-6">Every project begins with transforming rough lumber into usable stock. The Sapele boards were milled to their final thickness and cut to length. This initial preparation is one of the most critical steps, as it ensures all subsequent cuts and joinery will be precise and square.</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <img src="https://github.com/csuter931/Portfolio/blob/main/Images/Deck_Furniture/Process/Chair_step1.jpg?raw=true" alt="Rough sawn Sapele lumber" class="rounded-lg shadow-md">
+                            <img src="https://github.com/csuter931/Portfolio/blob/main/Images/Deck_Furniture/Process/Chair_step2.jpg?raw=true" alt="Milled and cut Sapele boards" class="rounded-lg shadow-md">
+                        </div>
+                    </div>
+
+                    <!-- Joinery Section -->
+                    <div class="mb-12">
+                        <h4 class="text-2xl font-heading font-bold mb-4">Joinery</h4>
+                        <p class="text-stone-700 leading-relaxed mb-6">For strength and longevity, this set relies on floating mortise and tenon joinery, executed with a Festool Domino joiner. This method creates strong, invisible joints that are perfect for the complex angles in the design. A CNC machine was used to create a template for the curved legs, ensuring each one was identical.</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <img src="https://github.com/csuter931/Portfolio/blob/main/Images/Deck_Furniture/Process/Chair_step3.jpg?raw=true" alt="Using a cross-cut sled for precision" class="rounded-lg shadow-md">
+                            <img src="https://github.com/csuter931/Portfolio/blob/main/Images/Deck_Furniture/Process/Chair_step4.jpg?raw=true" alt="Components cut and ready for joinery" class="rounded-lg shadow-md">
+                            <img src="https://github.com/csuter931/Portfolio/blob/main/Images/Deck_Furniture/Process/Chair_step5.jpg?raw=true" alt="Dry fitting the chair base" class="rounded-lg shadow-md">
+                        </div>
+                    </div>
+
+                    <!-- Assembly Section -->
+                    <div class="mb-12">
+                        <h4 class="text-2xl font-heading font-bold mb-4">Assembly</h4>
+                        <p class="text-stone-700 leading-relaxed mb-6">Assembly is a multi-step process. First, the base and side/back sub-assemblies are glued up separately. Once cured, these components are brought together in a final glue-up. Careful clamping and checking for squareness at each stage are essential to ensure a perfect final product.</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <img src="https://github.com/csuter931/Portfolio/blob/main/Images/Deck_Furniture/Process/Chair_step6.jpg?raw=true" alt="Assembling the side panels" class="rounded-lg shadow-md">
+                            <img src="https://github.com/csuter931/Portfolio/blob/main/Images/Deck_Furniture/Process/Chair_step7.jpg?raw=true" alt="Fitting the back slats on the loveseat" class="rounded-lg shadow-md">
+                            <img src="https://github.com/csuter931/Portfolio/blob/main/Images/Deck_Furniture/Process/Chair_step8.jpg?raw=true" alt="Side view of the loveseat assembly" class="rounded-lg shadow-md">
+                            <img src="https://github.com/csuter931/Portfolio/blob/main/Images/Deck_Furniture/Process/Chair_step9.jpg?raw=true" alt="Final glue-up with clamps" class="rounded-lg shadow-md">
+                        </div>
+                    </div>
+
+                    <!-- Finishing Section -->
+                    <div class="mb-12">
+                        <h4 class="text-2xl font-heading font-bold mb-4">Finishing</h4>
+                        <p class="text-stone-700 leading-relaxed mb-6">The final step is to apply a protective and beautiful finish. For this outdoor set, I used Osmo UV-Protection Oil. This hard wax oil finish penetrates the wood to protect it from within while also creating a durable, water-resistant surface. Two coats were meticulously applied to every surface, bringing out the rich color of the Sapele and preparing it for a life outdoors.</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <img src="https://github.com/csuter931/Portfolio/blob/main/Images/Deck_Furniture/Process/Chair_step10.jpg?raw=true" alt="Applying the hard wax oil finish" class="rounded-lg shadow-md">
+                            <img src="https://github.com/csuter931/Portfolio/blob/main/Images/Deck_Furniture/Process/Chair_step11.jpg?raw=true" alt="The completed chair frame after finishing" class="rounded-lg shadow-md">
+                            <img src="https://github.com/csuter931/Portfolio/blob/main/Images/Deck_Furniture/Process/Chair_step12.jpg?raw=true" alt="The finished set, ready for cushions" class="rounded-lg shadow-md">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -272,6 +337,30 @@
             const mobileMenu = document.getElementById('mobile-menu');
             mobileMenuButton.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
+            });
+
+            // Carousel Logic
+            document.querySelectorAll('[data-carousel]').forEach(carousel => {
+                const track = carousel.querySelector('[data-carousel-track]');
+                const items = carousel.querySelectorAll('[data-carousel-item]');
+                const prevButton = carousel.querySelector('.carousel-prev');
+                const nextButton = carousel.querySelector('.carousel-next');
+                let currentIndex = 0;
+
+                function updateCarousel() {
+                    const offset = -currentIndex * 100;
+                    track.style.transform = `translateX(${offset}%)`;
+                }
+
+                prevButton.addEventListener('click', () => {
+                    currentIndex = (currentIndex - 1 + items.length) % items.length;
+                    updateCarousel();
+                });
+
+                nextButton.addEventListener('click', () => {
+                    currentIndex = (currentIndex + 1) % items.length;
+                    updateCarousel();
+                });
             });
         });
     </script>
